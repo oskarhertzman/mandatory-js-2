@@ -56,10 +56,8 @@ function checkWin () {
       } else { // nothing on this tile, impossible to win
         win = false;
       }
-      if ( winConditions[winConditions.length - 1]) {
-
-      }
     }
+
     if (win && player != null) { // Game Over !
       console.log('Player ' + player + ' has won!');
       console.log(winConditions[i]);
@@ -68,6 +66,13 @@ function checkWin () {
       gameOver = true;
       break;
     }
+
+  }
+
+  if ($('.X').length == 5 && !gameOver ) { // Draw
+    $('#winalert').text("It's a draw!");
+    gameOver = true;
+
   }
 }
 
